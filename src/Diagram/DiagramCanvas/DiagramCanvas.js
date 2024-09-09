@@ -28,7 +28,7 @@ const DiagramCanvas = (props) => {
 
   // when the canvas is ready and placed within the DOM, save its bounding box to be provided down
   // to children component as a context value for future calculations.
-  useEffect(() => calculateBBox(canvasRef.current), [canvasRef.current]);
+  useEffect(() => calculateBBox(canvasRef.current), [canvasRef.current, props]);
   // same on window scroll and resize
   useWindowScroll(() => calculateBBox(canvasRef.current));
   useWindowResize(() => calculateBBox(canvasRef.current));
